@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "jsx": "react",
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "outDir": "./dist/",
+      "preserveConstEnums": true,
+      "removeComments": true,
+      "sourceMap": true,
+      "target": "es5",
+      "lib": ["esnext", "dom"],
+      "typeRoots": ["node_modules/@types"]
+    },
+    "include": ["./src/**/**/*"]
+  }
