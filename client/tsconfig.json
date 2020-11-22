@@ -1,15 +1,19 @@
 {
     "compilerOptions": {
+      "allowJs": true,
       "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "strict": true,
       "jsx": "react",
-      "module": "commonjs",
+      "module": "esnext",
       "noImplicitAny": true,
       "outDir": "./dist/",
       "preserveConstEnums": true,
       "removeComments": true,
       "sourceMap": true,
       "target": "es5",
-      "lib": ["esnext", "dom"],
+      "lib": ["dom", "dom.iterable", "esnext"],
       "typeRoots": ["node_modules/@types"]
     },
     "include": ["./src/**/**/*"]
