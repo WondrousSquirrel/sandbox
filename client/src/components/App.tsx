@@ -1,20 +1,9 @@
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
+// import { socket_connection, socket_unsubscribe, ws } from "../services/socket_connection";
 import store from "../store/store";
 
 const App = () => {
-    useEffect(() => {
-        const ws = new WebSocket('ws://localhost:5000/sockjs-node')
-        ws.onopen = () => {
-            console.log('Websocket connected');
-        }
-        return () => {
-            ws.onclose = () => {
-                console.log('Wesocket connection closed');
-            }
-            ws.close();
-        }
-    }, []);
     return (
         <Provider store={store}>
             <>
