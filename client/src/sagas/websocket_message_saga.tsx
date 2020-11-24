@@ -8,7 +8,7 @@ export function * websocket_message_saga  () {
     const channel = yield call(create_message_channel);
     while(true) {
         const message = yield take(channel);
-        let text = yield call(get_text, message.data);
+        let text: string = yield call(get_text, message.data);
         yield put({ type: SOCKET_MESSAGE, payload: text });
     }
 }

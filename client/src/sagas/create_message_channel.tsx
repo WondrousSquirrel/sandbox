@@ -1,11 +1,9 @@
-import { call } from 'redux-saga/effects'
 import { eventChannel as event_channel } from 'redux-saga'
-import { on_socket_open, on_socket_close, on_socket_message } from '../actions/actions'
 import { ws } from '../services/socket_connection';
 
-export const create_message_channel = () => {
-  return event_channel((emit: any) => {
-    const message_handler = (event:any) => {
+export const create_message_channel = (): Object => {
+  return event_channel((emit: Function) => {
+    const message_handler = (event:Event) => {
       emit(event)
     }
 

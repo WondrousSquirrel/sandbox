@@ -1,14 +1,11 @@
-import { SOCKET_MESSAGE } from "../actions/types";
+import { SocketActionType, SOCKET_MESSAGE } from "../actions/types";
+import { SocketState } from "../store/types";
 
-const initial_state = {
+const initial_state: SocketState = {
+    socket_reducer: ''
 };
 
-interface Iaction {
-    type: string;
-    payload: any;
-}
-
-export default (state = initial_state, { type, payload }: Iaction) => {
+export default (state = initial_state, { type, payload }: SocketActionType): string | SocketState => {
     switch (type) {
         case SOCKET_MESSAGE: {
             return  payload;
