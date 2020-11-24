@@ -12,11 +12,10 @@ const App = () => {
 
     const changeTheme = () => {
         setTheme(theme === themes.light? themes.dark: themes.light)
-        console.log(_theme)
     }
     return (
         <Provider store={store}>
-            <ThemeProvider value={themes.dark}>
+            <ThemeProvider value={theme}>
                 <div className='app' style={{backgroundColor: theme.backgroundColor, color: theme.color}}>  
                     <p>App Theme background color: {theme.backgroundColor}</p>
                     <button onClick={changeTheme}>Change Theme</button>
