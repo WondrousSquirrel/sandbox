@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 interface Button {
     text: string;
     backgroundColor: string;
-    className?: string
+    className?: string;
+    onClick: () => void;
 };
 
-const Button = (props: Button) => {
-    return <div className={'button ' + props.className} style={{backgroundColor: props.backgroundColor }}>
-        <p className='text'>{props.text}</p>
+const Button: FunctionComponent<Button> = ({className, backgroundColor, onClick, text}) => {
+    return <div className={'button ' + className} style={{backgroundColor: backgroundColor }} onClick={onClick}>
+        <p className='text'>{text}</p>
     </div>;
 };
 
