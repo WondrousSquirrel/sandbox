@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Provider } from "react-redux";
 import store from "../../store/store";
+import Calculator from "../Calculator";
 import Header from "../Header";
 import ThemeContext, { ThemeProvider, themes } from "../theme";
 
@@ -18,7 +19,7 @@ const App = () => {
             <ThemeProvider value={theme}>
                 <div className='app' style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
                     <Header changeTheme={changeTheme}/>
-                    <p>App Theme background color: {theme.backgroundColor}</p>
+                    <Calculator />
                 </div>
             </ThemeProvider>
         </Provider>
