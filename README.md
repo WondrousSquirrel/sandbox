@@ -7,11 +7,3 @@
 **client** - фронт часть на React
 
 **server** - бэк REST API на node.js/express
-
-Запустить webpack-dev-server с hot-reload`ом
-
-```
-npm run build
-```
-
-Для создания bundl`а
