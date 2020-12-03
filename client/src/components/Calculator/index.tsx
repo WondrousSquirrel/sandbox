@@ -1,26 +1,27 @@
 import React, { useContext, FunctionComponent, useState } from 'react';
 import ThemeContext from '../theme';
 
-import './calculator.scss'
 import Button from './Button';
+
+import './calculator.scss';
 
 type Operator = '+' | '-' | '*' | '/';
 
 const Calculator: FunctionComponent = () => {
 
     const theme = useContext(ThemeContext);
-    const [display, setDisplay] = useState<string>('0') // правая часть выражения
-    const [memory, setMemory] = useState<number>(0)
+    const [display, setDisplay] = useState<string>('0');// правая часть выражения
+    const [memory, setMemory] = useState<number>(0);
     // не позволяет установить оператор с левой стороны операнда
-    const [waitOperand, setWaitForOperand] = useState<boolean>(true) 
+    const [waitOperand, setWaitForOperand] = useState<boolean>(true);
     // записиываем выбранный оператор и выполняем указанную операцию
-    const [pendingOperator, setPendingOperator] = useState<Operator>()
+    const [pendingOperator, setPendingOperator] = useState<Operator>();
     const [result, setResult] = useState<number>(0) // ялвяется левой частью выражения
     // переключаем операции на работу с процентами
     const [percentMode, setPercentMode] = useState<boolean>(false);
     const percentage = () => {
         setPercentMode(!percentMode);
-    }
+    };
 
     const calculate = (rightOperand: number, pendingOperator: Operator): boolean => {
         let newResult = result;
@@ -29,145 +30,142 @@ const Calculator: FunctionComponent = () => {
         switch (pendingOperator) {
             case '+':
                 // проверка на работу с процентами
-                percentMode ? newResult +=  convertToPercent: newResult += rightOperand
-                break
+                percentMode ? newResult += convertToPercent : newResult += rightOperand;
+                break;
             case '-':
-                percentMode ? newResult -= convertToPercent : newResult -= rightOperand
-                break
+                percentMode ? newResult -= convertToPercent : newResult -= rightOperand;
+                break;
             case '*':
-                percentMode ? newResult *= convertToPercent : newResult *= rightOperand
-                break
+                percentMode ? newResult *= convertToPercent : newResult *= rightOperand;
+                break;
             case '/':
                 if (rightOperand === 0) {
-                    return false
+                    return false;
                 }
-                percentMode ? newResult /= convertToPercent : newResult /= rightOperand
+                percentMode ? newResult /= convertToPercent : newResult /= rightOperand;
                 break;
         }
-
-        console.log('before setting ' + newResult)
-        setResult(newResult)
-        setDisplay(newResult.toString().slice(0, 15))
-        return true
-    }
+        setResult(newResult);
+        setDisplay(newResult.toString().slice(0, 15));
+        return true;
+    };
 
     const addNumber = (digit: Number) => {
         // ставим цифру
-        let newDisplay = display
+        let newDisplay = display;
 
         // если экран пуст и выбрано число 0 или длина более 15 символов - ничего не делаем
         if ((display === '0' && digit === 0) || display.length > 15) {
-          return
-        }
+            return;
+        };
         // после добавления числа позволяем выбирать операцию
         if (waitOperand) {
-          newDisplay = ''
-          setWaitForOperand(false)
-        }
-    
+            newDisplay = '';
+            setWaitForOperand(false);
+        };
+
         if (display !== '0') {
-          newDisplay = newDisplay + digit.toString()
+            newDisplay = newDisplay + digit.toString();
         } else {
-          newDisplay = digit.toString()
-        }
-    
-        setDisplay(newDisplay)
-    }
+            newDisplay = digit.toString();
+        };
+
+        setDisplay(newDisplay);
+    };
 
 
     const letDot = () => {
-        let newDisplay = display
+        let newDisplay = display;
 
         if (waitOperand) {
-            newDisplay = '0'
-        }
+            newDisplay = '0';
+        };
 
         if (newDisplay.indexOf('.') === -1) {
-            newDisplay = newDisplay + '.'
-        }
+            newDisplay = newDisplay + '.';
+        };
 
-        setDisplay(newDisplay)
-        setWaitForOperand(false)
-    }
+        setDisplay(newDisplay);
+        setWaitForOperand(false);
+    };
 
 
     const addOperator = (operator: Operator) => {
-        const operand = Number(display)
+        const operand = Number(display);
 
         // если выбран оператор выполняем операцию
         if (typeof pendingOperator !== 'undefined' && !waitOperand) {
             if (!calculate(operand, pendingOperator)) { // в случае ошибки выходим из функции
-                return
-            }
+                return;
+            };
         } else { // или записываем число в левую часть выражения
-            setResult(operand)
-        }
+            setResult(operand);
+        };
 
         setPendingOperator(operator) // записываем опирацию
-        setWaitForOperand(true)
-    }
+        setWaitForOperand(true);
+    };
 
 
 
     const changeSign = () => {
         // меняем знак числа
-        const value = Number(display)
+        const value = Number(display);
 
         if (value > 0) {
-            setDisplay('-' + display)
+            setDisplay('-' + display);
         } else if (value < 0) {
-            setDisplay(display.slice(1)) // отсекаем перый индекс правого выражения
-        }
-    }
+            setDisplay(display.slice(1)); // отсекаем перый индекс правого выражения
+        };
+    };
 
     const equal = () => {
-        const operand = Number(display)
+        const operand = Number(display);
 
         if (typeof pendingOperator !== 'undefined' && !waitOperand) {
             if (!calculate(operand, pendingOperator)) {
-                return
-            }
+                return;
+            };
 
-            setPendingOperator(undefined)
+            setPendingOperator(undefined);
         } else {
-            setDisplay(operand.toString())
-        }
+            setDisplay(operand.toString());
+        };
 
-        setResult(operand)
-        setWaitForOperand(true)
-        console.log('result ' + result)
-    }
+        setResult(operand);
+        setWaitForOperand(true);
+    };
 
 
     const allClear = () => {
         // чистка всех данных
-        setMemory(0)
-        setResult(0)
-        setPendingOperator(undefined)
-        setDisplay('0')
-        setWaitForOperand(true)
-    }
+        setMemory(0);
+        setResult(0);
+        setPendingOperator(undefined);
+        setDisplay('0');
+        setWaitForOperand(true);
+    };
 
     const memoryRecall = () => {
         // получаем значение из памяти
-        setDisplay(memory.toString())
-        setWaitForOperand(true)
-    }
+        setDisplay(memory.toString());
+        setWaitForOperand(true);
+    };
 
     const memoryClear = () => {
-        setMemory(0)
-        setWaitForOperand(true)
-    }
+        setMemory(0);
+        setWaitForOperand(true);
+    };
 
     const addToMemory = () => {
-        setMemory(memory + Number(display))
-        setWaitForOperand(true)
-    }
+        setMemory(memory + Number(display));
+        setWaitForOperand(true);
+    };
 
     const remooveFromMemory = () => {
-        setMemory(memory - Number(display))
-        setWaitForOperand(true)
-    }
+        setMemory(memory - Number(display));
+        setWaitForOperand(true);
+    };
 
     return (
         <div className='centered'>
@@ -175,7 +173,7 @@ const Calculator: FunctionComponent = () => {
             <div className='calculator' style={{ backgroundColor: theme.secondColor, borderColor: theme.borderColor }}>
                 <div className='display'>
                     <div className='memory' style={{ color: theme.color2 }}>
-                        <p>{ percentMode ? '%': null}</p>
+                        <p>{percentMode ? '%' : null}</p>
                         <p>{memory === 0 ? null : memory}</p>
                     </div>
                     <div className='input'>
