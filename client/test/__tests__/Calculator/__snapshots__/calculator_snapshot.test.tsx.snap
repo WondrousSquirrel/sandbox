@@ -1,0 +1,411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Testing button snapshot 1`] = `
+<div
+  className="button undefined"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#DBE0E6",
+    }
+  }
+>
+  <p
+    className="text"
+  >
+    1
+  </p>
+</div>
+`;
+
+exports[`Snapshot Testing calculator snapshot 1`] = `
+<div
+  className="centered"
+>
+  <div
+    className="calculator"
+    style={
+      Object {
+        "backgroundColor": "#F5F5F5",
+        "borderColor": "#EDE8EB",
+      }
+    }
+  >
+    <div
+      className="display"
+    >
+      <div
+        className="memory"
+        style={
+          Object {
+            "color": "#24203880",
+          }
+        }
+      >
+        <p />
+        <p />
+      </div>
+      <div
+        className="input"
+      >
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+    <div
+      className="grid"
+    >
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#DBE0E6",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          AC
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#DBE0E6",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          +/-
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#DBE0E6",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          %
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FA9961",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          /
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          mc
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          mr
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          m-
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FA9961",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          m+
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          7
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          8
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          9
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FA9961",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          *
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          4
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          5
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          6
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FA9961",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          -
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          1
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          2
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          3
+        </p>
+      </div>
+      <div
+        className="button undefined"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FA9961",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          +
+        </p>
+      </div>
+    </div>
+    <div
+      className="bottom-grid"
+    >
+      <div
+        className="button double-sized"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          0
+        </p>
+      </div>
+      <div
+        className="button dot-btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#C2C2C2",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          ,
+        </p>
+      </div>
+      <div
+        className="button equal-btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FA9961",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          =
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
